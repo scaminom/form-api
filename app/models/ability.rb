@@ -7,25 +7,10 @@ class Ability
     puts "Initializing Ability for user: #{user.inspect}"
     # user ||= User.includes(:role).new(username: "guess", password: "guess", role_id: 5)
 
-    if user.role.guess?
-      can :read, :form
-    end
-
-    if user.role.developer?
-      puts "develper role"
-      can :read, :form
-      can [:read, :create], :assignments
-      puts "User that makes the request: #{user.inspect}"
-    end
-
-    if user.role.admin?
-      puts "here admin"
-      can :manage, :all
-    end
-
-    if user.role.employee?
-      can :read, :companies
-      can [:create, :update, :read], :assignments
-    end
+    can :read, Form if user.guess?
+    can :manage, :all if user.admin?
+    can :read, [Form, Assignment] if user.developer?
+    can :read, Company if user.employee?
+    # cannot :create, Student if user.teacher?d
   end
 end

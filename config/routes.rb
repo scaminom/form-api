@@ -5,7 +5,6 @@ Rails.application.routes.draw do
         sessions: 'api/v1/sessions'
       }
       resources :users, only: [:index, :show, :create, :update, :destroy]
-      resources :roles, only: [:index, :show, :create, :update, :destroy]
       resources :assignments, only: [:index, :create, :show, :update, :destroy]
       resources :forms, only: [:index, :show, :create, :update, :destroy]
       resources :companies, only: [:index, :show, :create, :update, :destroy]
