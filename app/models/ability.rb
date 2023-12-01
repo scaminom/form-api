@@ -4,7 +4,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    puts "Initializing Ability for user: #{user.inspect}"
     # user ||= User.includes(:role).new(username: "guess", password: "guess", role_id: 5)
 
     can :read, Form if user.guess?
