@@ -1,24 +1,9 @@
-# README
+# Form Template API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an API built on Rails that manages the assignments of developers who need to review change forms.
 
-Things you may want to cover:
+## Dependencies
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby 3.2.2
+- Rails 7.1.2
+- Postgres
