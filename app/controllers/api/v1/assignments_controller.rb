@@ -61,17 +61,17 @@ module Api
       end
     
       private
-        def set_assignment
-          @assignment = Assignment.find(params[:id])
-        end
+      def set_assignment
+        @assignment = Assignment.find(params[:id])
+      end
     
-        def assignment_params
-          params.require(:assignment).permit(:description, :user_id, :form_id)
-        end
+      def assignment_params
+        params.require(:assignment).permit(:description, :user_id, :form_id)
+      end
 
-        def serialized_assignment(assignment)
-          AssignmentSerializer.new.serialize(assignment).to_json
-        end
+      def serialized_assignment(assignment)
+        AssignmentSerializer.new.serialize(assignment).to_json
+      end
     end
   end
 end

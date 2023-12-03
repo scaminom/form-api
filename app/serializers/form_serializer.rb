@@ -26,7 +26,6 @@ class FormSerializer < Panko::Serializer
 
   def assigned_users
     users = object.assigned_users
-    names = users.map { |user| user.username}
-    names
+    users.map(&:username)
   end
 end

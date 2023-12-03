@@ -4,12 +4,10 @@ module Api
       # respond_to :json
 
       # Override the set_flash_message method to prevent flash-related errors
-      def set_flash_message(key, kind, options = {})
-      end
+      def set_flash_message(key, kind, options = {}); end
 
       # Override the require_no_authentication method to prevent flash-related errors
-      def require_no_authentication
-      end
+      def require_no_authentication; end
 
       def create
         user = User.find_by_username(params[:username])
@@ -17,7 +15,7 @@ module Api
         if user && user.valid_password?(params[:password])
           sign_in(user)
           render json: {
-            token: JWT.encode({ user_id: user.id }, Rails.application.secret_key_base),
+            token: JWT.encode({ user_id: user.id }, Rails.application.secret_key_base)
           }
         else
           render json: { error: 'Invalid credentials' }, status: :unauthorized
@@ -35,4 +33,3 @@ module Api
     end
   end
 end
-

@@ -1,5 +1,5 @@
 class UserSerializer < Panko::Serializer
-  attributes :id, 
+  attributes :id,
              :username,
              :assignments,
              :role

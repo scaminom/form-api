@@ -18,7 +18,7 @@ class ApplicationController < ActionController::API
     token = authorization_header.split(' ').last
     decoded_token = decode_token(token)
 
-    if decoded_token && user = User.find_by(id: decoded_token['user_id'])
+    if decoded_token && user == User.find_by(id: decoded_token['user_id'])
       sign_in user, store: true
       @current_user = user
     else
