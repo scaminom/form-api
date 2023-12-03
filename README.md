@@ -27,3 +27,13 @@ Check your rails version
 ```
 rails --version
 ```
+
+Then install the dependencies on your machine
+```
+bundle install
+```
+
+Run the server
+```
+rails server
+```
