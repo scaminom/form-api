@@ -11,9 +11,9 @@ This is an API built on Rails that manages the assignments of developers who nee
 ## How to run it locally
 First you need to install ruby and rails locally
 
-''
+'''
 winget install RubyInstallerTeam.RubyInstaller2-3.2.2-1
-''
+'''
 
 Check your ruby version
 ''
