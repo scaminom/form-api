@@ -22,7 +22,7 @@ ruby --version
 
 Install rails
 ```
-gem install rails
+gem install rails -v 7.1.2
 ```
 
 Check your rails version
