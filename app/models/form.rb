@@ -1,6 +1,7 @@
 class Form < ApplicationRecord
-  has_many    :assignments
-  has_many    :users, through: :assignments
+  belongs_to :creator, class_name: 'User', foreign_key: 'user_id'
+  has_many :assignments
+  has_many :assigned_users, through: :assignments, source: :user
 
   enum status: {
     created: 0,

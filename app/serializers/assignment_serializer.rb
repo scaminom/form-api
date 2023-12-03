@@ -1,16 +1,14 @@
 class AssignmentSerializer < Panko::Serializer
   attributes :id,
              :description,
-             :user,
-             :form,
-             :created_at,
-             :updated_at
+             :user_assignment,
+             :form
 
-  def user
-    object.user
+  def user_assignment
+    object.user.username
   end
 
   def form
-    object.form
+    object.form.title
   end
 end

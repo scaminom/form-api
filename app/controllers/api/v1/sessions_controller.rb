@@ -1,7 +1,7 @@
 module Api
   module V1
     class SessionsController < Devise::SessionsController
-      respond_to :json
+      # respond_to :json
 
       # Override the set_flash_message method to prevent flash-related errors
       def set_flash_message(key, kind, options = {})
@@ -21,6 +21,15 @@ module Api
           }
         else
           render json: { error: 'Invalid credentials' }, status: :unauthorized
+        end
+      end
+
+      def destroy
+        if current_user.present?
+          sign_out(current_user)
+          render json: { message: 'Signed out successfully' }
+        else
+          render json: { message: 'No user to sign out' }, status: :unprocessable_entity
         end
       end
     end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       devise_for :users, controllers: {
         sessions: 'api/v1/sessions'
       }
+      delete 'users/sign_out', to: 'sessions#destroy', as: :destroy_user_session
       resources :users, only: [:index, :show, :create, :update, :destroy]
       resources :assignments, only: [:index, :create, :show, :update, :destroy]
       resources :forms, only: [:index, :show, :create, :update, :destroy]
