@@ -5,12 +5,10 @@ module Api
 
       # Override the set_flash_message method to prevent flash-related errors
       def set_flash_message(key, kind, options = {})
-        # Do nothing or log a message if needed
       end
 
       # Override the require_no_authentication method to prevent flash-related errors
       def require_no_authentication
-        # Do nothing or log a message if needed
       end
 
       def create

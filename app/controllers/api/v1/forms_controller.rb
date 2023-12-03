@@ -58,7 +58,9 @@ module Api
         end
     
         def form_params
-          params.require(:form).permit(:title, :objective, :description)
+          params.require(:form).permit(:title, :description, :application_number,
+                                       :date, :address, :justification, :status,
+                                       :priority_level, :deadline, ).merge(user_id: current_user.id)
         end
     
         def serialized_form(form)

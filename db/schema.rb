@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_30_204444) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_03_010910) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,8 +32,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_204444) do
 
   create_table "forms", force: :cascade do |t|
     t.string "title"
-    t.string "objective"
     t.string "description"
+    t.serial "application_number", null: false
+    t.date "date"
+    t.text "address"
+    t.text "justification"
+    t.integer "status", default: 0
+    t.integer "priority_level"
+    t.date "deadline"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_forms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,5 +55,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_204444) do
 
   add_foreign_key "assignments", "forms"
   add_foreign_key "assignments", "users"
+  add_foreign_key "forms", "users"
   add_foreign_key "users", "companies"
 end

@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   belongs_to :company
   has_many :assignments
+  has_many :forms, through: :assignments
 end

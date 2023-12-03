@@ -2,7 +2,6 @@ class FormSerializer < Panko::Serializer
   attributes :id,
              :title,
              :description,
-             :objective,
              :users,
              :assignments
 
