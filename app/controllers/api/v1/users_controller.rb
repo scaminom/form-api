@@ -6,7 +6,8 @@ module Api
       before_action :set_user, only: %i[show destroy]
 
       def index
-        @users = User.all
+        company = current_user.company
+        @users = company.users
 
         @serialize_users = @users.map { |user| serialize_user(user) }
 
