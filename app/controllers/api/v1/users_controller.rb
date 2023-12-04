@@ -24,7 +24,8 @@ module Api
       end
 
       def create
-        if params[:user][:company_id].present?
+        if !params[:user][:company_id].present?
+          params[:user][:company_id] = current_user.company.id
           @user = User.new(user_params)
         else
           @company = Company.new(company_params)

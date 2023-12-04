@@ -18,6 +18,6 @@ class FormSerializer < Panko::Serializer
 
   def assigned_users
     users = object.assigned_users
-    users.map(&:first_name)
-  end
+    users.map { |user| { first_name: user.first_name, last_name: user.last_name } }
+  end
 end
