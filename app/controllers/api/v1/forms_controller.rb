@@ -57,7 +57,7 @@ module Api
       end
 
       def form_params
-        params.require(:form).permit(:title, :description, :application_number,
+        params.require(:form).permit(:proyect_name, :description, :application_number,
                                      :date, :address, :justification, :status,
                                      :priority_level, :deadline, ).merge(user_id: current_user.id)
       end
