@@ -6,7 +6,7 @@ module Api
       before_action :set_form, only: %i[ show update destroy ]
 
       def index
-        @forms = Form.all
+        @forms = current_user.forms
     
         @serialized_forms = @forms.map { |form| serialized_form(form) }
     
