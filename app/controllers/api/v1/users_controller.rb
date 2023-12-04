@@ -2,7 +2,7 @@ module Api
   module V1
     class UsersController < ApplicationController
       before_action :authenticate_user!
-      load_and_authorize_resource
+      # load_and_authorize_resource
       before_action :set_user, only: %i[show update destroy]
 
       def index
@@ -58,7 +58,7 @@ module Api
       end
 
       def user_params
-        params.require(:user).permit(:username, :email, :password, :role_id, :company_id)
+        params.require(:user).permit(:email, :password, :role, :company_id)
       end
 
       def serialize_user(user)
