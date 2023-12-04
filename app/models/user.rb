@@ -10,8 +10,10 @@ class User < ApplicationRecord
   enum role: { admin: 1, developer: 2, tester: 3 }
 
   belongs_to :company
+  accepts_nested_attributes_for :company
   has_many :assignments
   has_many :assigned_forms, through: :assignments, source: :form
+  has_many :forms, through: :assignments
 
   def jwt_payload
     super
