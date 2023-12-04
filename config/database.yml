@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: form-template
+  username: postgres
+  password: root
+
+
+
+test:
+  <<: *default
+  database: form-template-test
+  username: postgres
+  password: root
+
+production:
+  <<: *default
+  database: form-template-production
+  username: postgres
+  password: <%= ENV["INVENTORY_API_DATABASE_PASSWORD"] %>
