@@ -1,3 +1,4 @@
+# frozen string literal: true
 module Api
   module V1
     class UsersController < ApplicationController

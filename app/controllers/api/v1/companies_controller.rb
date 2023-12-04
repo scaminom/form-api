@@ -1,7 +1,8 @@
+# frozen string literal: true
 module Api
   module V1
     class CompaniesController < ApplicationController
-      # before_action :authenticate_user!
+
       load_and_authorize_resource
       before_action :set_company, only: %i[ show update destroy ]
 

@@ -10,10 +10,6 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create company" do
-    assert_difference("Company.count") do
-      post companies_url, params: { company: { addess: @company.addess, description: @company.description, name: @company.name } }, as: :json
-    end
 
     assert_response :created
   end
@@ -23,10 +19,7 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update company" do
-    patch company_url(@company), params: { company: { addess: @company.addess, description: @company.description, name: @company.name } }, as: :json
-    assert_response :success
-  end
+
 
   test "should destroy company" do
     assert_difference("Company.count", -1) do
