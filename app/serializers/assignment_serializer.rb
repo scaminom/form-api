@@ -18,6 +18,10 @@ class AssignmentSerializer < Panko::Serializer
     object.form.application_number
   end
 
+  def form_id
+    object.form_id
+  end
+
   def date_created
     object.form.date
   end
@@ -25,5 +29,4 @@ class AssignmentSerializer < Panko::Serializer
   def requesting
     [object.form.creator.first_name, object.form.creator.last_name].join(' ')
   end
-
 end

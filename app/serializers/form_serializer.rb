@@ -1,6 +1,6 @@
 class FormSerializer < Panko::Serializer
   attributes :id,
-             :title,
+             :proyect_name,
              :description,
              :application_number,
              :date,
