@@ -1,7 +1,7 @@
 module Api
   module V1
     class AssignmentsController < ApplicationController
-      # before_action :authenticate_user!
+     
       load_and_authorize_resource
       before_action :set_assignment, only: %i[ show update destroy ]
     
@@ -61,6 +61,7 @@ module Api
       end
     
       private
+      
       def set_assignment
         @assignment = current_user.assignments.find(params[:id])
       end

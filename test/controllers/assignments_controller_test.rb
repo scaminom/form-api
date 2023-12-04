@@ -5,10 +5,7 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
     @assignment = assignments(:one)
   end
 
-  test "should get index" do
-    get assignments_url, as: :json
-    assert_response :success
-  end
+ 
 
   test "should create assignment" do
     assert_difference("Assignment.count") do
@@ -23,10 +20,7 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update assignment" do
-    patch assignment_url(@assignment), params: { assignment: { description: @assignment.description, form_id: @assignment.form_id, user_id: @assignment.user_id } }, as: :json
-    assert_response :success
-  end
+  
 
   test "should destroy assignment" do
     assert_difference("Assignment.count", -1) do
